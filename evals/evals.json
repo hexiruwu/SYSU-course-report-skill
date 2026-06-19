@@ -1,0 +1,85 @@
+{
+  "skill_name": "course-report",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "老师发了作业要求：\n\n---\n【机器学习课程 期末大作业要求】\n\n题目方向：任选一个深度学习模型，对其原理进行深入分析，并结合一个具体应用场景讨论其优化方向。\n\n要求：\n1. 正文不少于3000字\n2. 至少引用5篇2020年以后的文献\n3. 需包含：背景介绍、模型原理（含公式推导）、应用分析、优化探讨、结论\n4. 提交格式：PDF，文件名格式：学号_姓名_ML大作业\n\n截止日期：第16周周五\n---\n\n帮我写这个作业报告，我想写Transformer在视觉任务中的应用（Vision Transformer, ViT）",
+      "expected_output": "生成一份完整的LaTeX报告源码（.tex文件），遵循用户的中山大学双栏学术模板，包含：题目（关于ViT的中文标题）、摘要、关键词、引言、ViT原理章节（含注意力机制公式）、视觉应用分析、优化方向探讨、结论，以及参考文献占位和图片清单",
+      "files": [],
+      "assertions": [
+        {
+          "name": "输出了完整.tex文件",
+          "description": "响应中包含完整的LaTeX文件，以\\documentclass开头，包含\\begin{document}和\\end{document}"
+        },
+        {
+          "name": "使用了用户的标准模板包",
+          "description": "preamble中包含ctex、gbt7714、multicol、fancyhdr等用户模板的核心包"
+        },
+        {
+          "name": "包含双栏正文结构",
+          "description": "正文使用了\\begin{multicols}{2}...\\end{multicols}包裹"
+        },
+        {
+          "name": "包含数学公式",
+          "description": "至少有一个equation环境，体现ViT/Attention的数学公式"
+        },
+        {
+          "name": "包含图片占位代码",
+          "description": "至少有2处图片插入代码（figure*或minipage+captionof），并有关于图片内容的注释"
+        },
+        {
+          "name": "先输出大纲再生成代码",
+          "description": "在生成完整LaTeX之前，有一个简短的章节大纲供用户确认"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "prompt": "帮我写强化学习课的作业报告，主题是\"基于PPO算法的机器人连续控制\"，老师没规定格式，字数2500字左右就行",
+      "expected_output": "生成一份关于PPO算法用于机器人连续控制的LaTeX报告，遵循用户模板，结构合理，包含PPO算法原理（含clip目标函数公式）、在机器人控制中的应用、以及参考文献建议",
+      "files": [],
+      "assertions": [
+        {
+          "name": "输出了完整.tex文件",
+          "description": "响应中包含完整的LaTeX源码"
+        },
+        {
+          "name": "使用了用户的标准模板",
+          "description": "包含mycolor颜色定义、customsectionformat等用户专属命令"
+        },
+        {
+          "name": "提供了参考文献建议",
+          "description": "在输出末尾列出了建议查找的参考文献方向或论文关键词"
+        },
+        {
+          "name": "包含PPO核心公式",
+          "description": "包含PPO的clip目标函数或importance sampling相关公式"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "计算机网络课要写一篇关于\"软件定义网络（SDN）架构演进\"的调研报告，要求不多，主要是得有自己的分析观点，不能只是堆文献综述。5页左右。",
+      "expected_output": "生成一篇有个人分析视角的SDN调研报告LaTeX代码，不是简单堆砌文献，而是有明确论点和分析判断，结构清晰，约5页双栏",
+      "files": [],
+      "assertions": [
+        {
+          "name": "输出了完整.tex文件",
+          "description": "包含完整LaTeX源码"
+        },
+        {
+          "name": "使用了用户的标准模板",
+          "description": "包含ctex、gbt7714、multicol等核心包以及mycolor颜色定义"
+        },
+        {
+          "name": "结构有分析层次",
+          "description": "不只是\"第X节：某某技术\"的平铺，而是体现对比分析、问题导向或有论点的章节结构"
+        },
+        {
+          "name": "提供图片清单",
+          "description": "在代码外列出了各图片位置及其应展示内容的说明"
+        }
+      ]
+    }
+  ]
+}
