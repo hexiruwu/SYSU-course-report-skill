@@ -1,14 +1,16 @@
 ---
 name: course-report
 description: |
-  帮助生成课程作业报告的LaTeX代码。每当用户提到"写报告"、"课程作业"、"期末报告"、"作业要求"、"帮我写"配合课程内容，或上传了作业要求文档时，必须使用本skill。即使用户只说"帮我写一下这个作业"也应触发。输出可在Overleaf直接编译的完整.tex文件，遵循用户的中山大学模板风格（双栏学术期刊或单栏SYSUReport）。
+  帮助生成课程作业报告的LaTeX代码。每当用户提到"写报告"、"课程作业"、"期末报告"、"作业要求"、"帮我写"配合课程内容，或上传了作业要求文档时，必须使用本skill。即使用户只说"帮我写一下这个作业"也应触发。输出可在Overleaf直接编译的完整.tex文件，支持双栏学术期刊或单栏SYSUReport两种模板。
 ---
 
 # 课程报告生成 Skill
 
 ## 你是谁
 
-你是党政扬（中山大学智能工程学院，23354053，dangzhy5@mail2.sysu.edu.cn）的课程报告助手。你的任务是：**根据教师提供的作业要求，生成符合用户固定LaTeX模板风格的完整报告**。
+你是用户的课程报告助手。你的任务是：**根据教师提供的作业要求，生成符合用户固定LaTeX模板风格的完整报告**。
+
+> **使用前配置**：请在下方模板中将 `[姓名]`、`[学号]`、`[学院]`、`[专业]`、`[邮箱]` 替换为你自己的信息。
 
 ---
 
@@ -115,7 +117,7 @@ description: |
 \fancypagestyle{mystyle}{
     \chead{{\zihao{-5}\songti 中山大学学报（自然科学版）}\par\noindent ACTA \; SCIENTIARUM \; NATURALIUM \; UNIVERSITI \; SUNYATSENI}
     \rhead{\thepage}
-    \lfoot{\zihao{-5} \heiti 作者简介:\songti 党政扬，男；\heiti 研究方向：\songti [研究方向关键词]；E-mail：dangzhy5@mail2.sysu.edu.cn}
+    \lfoot{\zihao{-5} \heiti 作者简介:\songti [姓名]，男；\heiti 研究方向：\songti [研究方向关键词]；E-mail：[邮箱]}
     \renewcommand{\headrulewidth}{0.5pt}
     \renewcommand{\footrulewidth}{0.5pt}
 }
@@ -139,8 +141,8 @@ description: |
 \begin{document}
 
 \title{\zihao{2}\songti \color{mycolor}{\textbf{[报告标题]}}}
-\author{\zihao{4}\kaishu\color{mycolor} {党政扬}}
-\affil{\zihao{5}\kaishu 中山大学智能工程学院，广东 \ 深圳518107}
+\author{\zihao{4}\kaishu\color{mycolor} {[姓名]}}
+\affil{\zihao{5}\kaishu [学院全称]，[省份] \ [城市邮编]}
 \date{}
 \maketitle
 \thispagestyle{mystyle}
@@ -211,10 +213,10 @@ description: |
 
 \headl{}\headc{}\headr{[课程名称]}
 \lessonTitle{[课程名称]}
-\stuname{党政扬}
-\stuid{23354053}
-\inst{智能工程学院}
-\major{智能科学与技术}
+\stuname{[姓名]}
+\stuid{[学号]}
+\inst{[学院]}
+\major{[专业]}
 \date{\today}
 
 \begin{document}
@@ -288,4 +290,4 @@ description: |
 | 一般工科（机器人、控制、通信等） | 近5年为主（2021-2026），经典奠基文献可例外 |
 | 实验类报告/旧工科（电机、信号处理等） | 5年以上经典文献可正常引用 |
 
-生成报告时根据课程方向自
+生成报告时根据课程方向自动判断适用规
